@@ -491,8 +491,6 @@ func (b *BlockWise) sendEntityIncomplete(w ResponseWriter, r Message, token mess
 	if msg, ok := sendMessage.(hasType); ok {
 		msg.SetType(udpMessage.NonConfirmable)
 	}
-
-	setTypeFrom(sendMessage, r)
 	w.SetMessage(sendMessage)
 }
 
